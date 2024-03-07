@@ -14,7 +14,6 @@ export default function Navbar() {
   return (
     <header className="bg-home-link-background-blue">
       <div className="lg:hidden flex items-center justify-between pt-10 pl-6 pb-6 pr-6 w-full box-border">
-        {/* Botão do menu hamburger */}
         <button className="relative p-4 focus:outline-none" onClick={toggleMenu}>
           <div className="block w-8">
             <div className={`absolute h-0.5 w-6 bg-white transform transition duration-500 ease-in-out ${isMenuOpen ? 'rotate-45' : '-translate-y-1.5'}`}/>
@@ -39,9 +38,9 @@ export default function Navbar() {
         className={`transition-max-height duration-700 ease-in-out overflow-hidden lg:hidden`}
       >
         <div className="bg-home-link-background-blue w-full p-6">
-          <a href="/" className="block py-2 text-white">Home</a>
-          <a href="/portfolio" className="block py-2 text-white">Portfólio</a>
-          <a href="/services" className="block py-2 text-white">Nossos Serviços</a>
+          <a href="/" className="block py-2 text-white  border border-solid rounded-xl mb-3 pl-4 uppercase text-xl">Home</a>
+          <a href="/portfolio" className="block py-2 text-white  border border-solid rounded-xl mb-3 pl-4 uppercase text-xl">Portfólio</a>
+          <a href="/services" className="block py-2 text-white  border border-solid rounded-xl mb-3 pl-4 uppercase text-xl">Nossos Serviços</a>
         </div>
       </div>
 
