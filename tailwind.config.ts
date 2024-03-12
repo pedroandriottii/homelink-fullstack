@@ -11,6 +11,7 @@ const config: Config = {
       colors: {
         "home-link-background-blue": "#132845",
         "home-link-light-blue": "#65CCFF",
+        "home-link-seccond-blue": "#153764",
       },
       backgroundImage: {
       },

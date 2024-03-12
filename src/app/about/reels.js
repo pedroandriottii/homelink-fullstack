@@ -6,8 +6,8 @@ import { storage } from '../../firebase';
 const VideoComponent = ({ videoPath, posterPath }) => {
   const [videoUrl, setVideoUrl] = useState("");
   const [posterUrl, setPosterUrl] = useState("");
-  const [showControls, setShowControls] = useState(false); // Estado para controlar a exibição dos controles
-  const videoRef = useRef(null); // Referência para o elemento de vídeo
+  const [showControls, setShowControls] = useState(false);
+  const videoRef = useRef(null);
 
   useEffect(() => {
     const fetchUrl = async (path, setUrl) => {
@@ -24,21 +24,20 @@ const VideoComponent = ({ videoPath, posterPath }) => {
     fetchUrl(videoPath, setVideoUrl);
   }, [videoPath, posterPath]);
 
-  // Função para iniciar a reprodução do vídeo e mostrar os controles
   const handleVideoStart = () => {
     if (videoRef.current) {
-      videoRef.current.play(); // Inicia a reprodução do vídeo
-      setShowControls(true); // Mostra os controles
+      videoRef.current.play();
+      setShowControls(true);
     }
   };
 
   return (
-    <div style={{ position: 'relative', width: '200px', height: '304px' }}>
+    <div style={{ position: 'relative', width: '200px', height: '304px', margin:'20px'}}>
       {videoUrl ? (
         <video
           width="200"
           height="304"
-          style={{ borderRadius: '15px', width: '100%', height: '100%' }}
+          style={{ borderRadius: '20px', width: '100%', height: '100%' }}
           poster={posterUrl}
           controls={showControls}
           ref={videoRef}
