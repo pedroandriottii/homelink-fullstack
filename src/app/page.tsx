@@ -4,9 +4,9 @@ import Hero from "../app/components/hero";
 
 export default function Home() {
   return (
-    <html>
+    <div>
       <Navbar />
       <Hero />
-    </html>
+    </div>
   );
 }

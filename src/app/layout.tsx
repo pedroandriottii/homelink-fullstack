@@ -3,7 +3,7 @@ import { Montserrat } from "next/font/google";
 
 import "./globals.css";
 
-const montserrat = Montserrat({ subsets: ["latin"] });
+const montserrat = Montserrat({ subsets: ["latin"], weight: ['400', '700'], display: "swap" });
 
 export const metadata: Metadata = {
   title: "Home Link",
@@ -16,7 +16,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="pt-r">
+    <html lang="pt-br">
       <body className={montserrat.className}>{children}</body>
     </html>
   );
