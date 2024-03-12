@@ -10,6 +10,7 @@ const config: Config = {
     extend: {
       colors: {
         "home-link-background-blue": "#132845",
+        "home-link-light-blue": "#65CCFF",
       },
       backgroundImage: {
       },
