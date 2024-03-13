@@ -6,7 +6,7 @@ import { loadingStyle, spinnerStyle } from './videoloading';
 
 const VideoComponent = ({ videoPath, posterPath }) => {
   const [videoUrl, setVideoUrl] = useState("");
-  const [showControls, setShowControls] = useState(false);
+  const [isVideoPlaying, setIsVideoPlaying] = useState(false);
   const videoRef = useRef(null);
 
   useEffect(() => {
@@ -26,42 +26,45 @@ const VideoComponent = ({ videoPath, posterPath }) => {
   const handleVideoStart = () => {
     if (videoRef.current) {
       videoRef.current.play();
-      setShowControls(true);
+      setIsVideoPlaying(true);
     }
   };
 
   return (
     <div style={{ position: 'relative', width: '200px', height: '304px', margin: '20px' }}>
-      {videoUrl ? (
-        <video
-          width="200"
-          height="304"
-          style={{ borderRadius: '20px', width: '100%', height: '100%' }}
-          poster={posterPath}
-          controls={showControls}
-          ref={videoRef}
-        >
-          <source src={videoUrl} type="video/mp4" />
-          Seu navegador não suporta vídeos.
-        </video>
-      ) : (
-        <div style={loadingStyle}>
-          <div style={spinnerStyle}></div>
-        </div>
-      )}
-      {!showControls && (
-        <div
+      {!isVideoPlaying && (
+        <img
+          src={posterPath}
+          alt="Video poster"
           style={{
             position: 'absolute',
-            top: 0,
-            left: 0,
             width: '100%',
             height: '100%',
-            backgroundColor: 'transparent',
+            borderRadius: '15px',
             cursor: 'pointer',
           }}
           onClick={handleVideoStart}
-        ></div>
+        />
+      )}
+      <video
+        width="200"
+        height="304"
+        style={{
+          borderRadius: '15px',
+          width: '100%',
+          height: '100%',
+          display: isVideoPlaying ? 'block' : 'none',
+        }}
+        controls
+        ref={videoRef}
+      >
+        <source src={videoUrl} type="video/mp4" />
+        Seu navegador não suporta vídeos.
+      </video>
+      {videoUrl ? null : (
+        <div style={loadingStyle}>
+          <div style={spinnerStyle}></div>
+        </div>
       )}
     </div>
   );
