@@ -1,67 +1,40 @@
-import Image from 'next/image';
-
 export default function ServicesBody() {
   return (
-    <div className='flex flex-col items-center'>
-      <div className='flex flex-col items-center'>
-        <Image
-          src="/services/iluminacao.jpg"
-          alt='Iluminação'
-          width={168}
-          height={177}
-        />
-        <h1>Iluminação Inteligente</h1>
-        <p>Controle sua Iluminação por Comandos de voz ou pelo Smartphone.</p>
+    <div className='grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10 p-5'>
+      <div className='flex flex-col items-center text-center gap-2'>
+        <div className='w-full h-40 bg-cover bg-center rounded-lg' style={{backgroundImage: "url('/services/iluminacao.jpg')"}}></div>
+        <h1 className='font-bold font-sans text-home-link-seccond-blue'>Iluminação Inteligente</h1>
+        <p className='font-sans text-home-link-seccond-blue'>Controle sua Iluminação por Comandos de voz ou pelo Smartphone.</p>
       </div>
-      <div>
-        <Image
-          src="/services/servico-2.jpg"
-          alt='Televisao e ar-condicionado'
-          width={168}
-          height={177}
-        />
-        <h1>Termostato e Televisores</h1>
-        <p>Controle a temperatura do Ar-condicionado por comandos de voz ou Smartphone</p>
+
+      <div className='flex flex-col items-center text-center gap-2'>
+        <div className='w-full h-40 bg-cover bg-center rounded-lg' style={{backgroundImage: "url('/services/servico-2.jpg')"}}></div>
+        <h1 className='font-bold font-sans text-home-link-seccond-blue'>Termostato e Televisores</h1>
+        <p className='font-sans text-home-link-seccond-blue'>Controle a temperatura do Ar-condicionado por comandos de voz ou Smartphone</p>
       </div>
-      <div>
-        <Image
-          src="/services/servico-3.jpg"
-          alt='Piscinas Inteligentes'
-          width={168}
-          height={177}
-        />
-        <h1>Piscinas Inteligentes</h1>
-        <p>Controle os Leds e a temperatura da piscina por comandos de voz ou Smartphone</p>
+
+      <div className='flex flex-col items-center text-center gap-2'>
+        <div className='w-full h-40 bg-cover bg-center rounded-lg' style={{backgroundImage: "url('/services/servico-3.jpg')"}}></div>
+        <h1 className='font-bold font-sans text-home-link-seccond-blue'>Piscinas Inteligentes</h1>
+        <p className='font-sans text-home-link-seccond-blue'>Controle os Leds e a temperatura da piscina por comandos de voz ou Smartphone</p>
       </div>
-      <div>
-        <Image
-          src='/services/servico-4.jpg'
-          alt='Segurança'
-          width={168}
-          height={177}
-        />
-        <h1>Segurança</h1>
-        <p>Faça o monitoramento da sua casa com Fechaduras Digitais e Câmeras de Segurança</p>
+
+      <div className='flex flex-col items-center text-center gap-2'>
+        <div className='w-full h-40 bg-cover bg-center rounded-lg' style={{backgroundImage: "url('/services/servico-4.jpg')"}}></div>
+        <h1 className='font-bold font-sans text-home-link-seccond-blue'>Segurança</h1>
+        <p className='font-sans text-home-link-seccond-blue'>Faça o monitoramento da sua casa com Fechaduras Digitais e Câmeras de Segurança</p>
       </div>
-      <div>
-        <Image
-          src='/services/twibi.png'
-          alt='Roteadores'
-          width={168}
-          height={177}
-        />
-        <h1>Wi-Fi Prosissional</h1>
-        <p>Expanda o sinal do Wi-Fi para toda a casa! Com tecnologia de ponta.</p>
+
+      <div className='flex flex-col items-center text-center gap-2'>
+        <div className='w-full h-40 bg-cover bg-center rounded-lg' style={{backgroundImage: "url('/services/twibi.png')"}}></div>
+        <h1 className='font-bold font-sans text-home-link-seccond-blue'>Wi-Fi Profissional</h1>
+        <p className='font-sans text-home-link-seccond-blue'>Expanda o sinal do Wi-Fi para toda a casa! Com tecnologia de ponta.</p>
       </div>
-      <div>
-        <Image
-          src="/services/sound-system.png"
-          alt='Sistema de Som'
-          width={168}
-          height={177}
-        />
-        <h1>Sonorização</h1>
-        <p>Deixe seu ambiente com um som ambiente de qualidade.</p>
+
+      <div className='flex flex-col items-center text-center gap-2'>
+        <div className='w-full h-40 bg-cover bg-center rounded-lg' style={{backgroundImage: "url('/services/sound-system.png')"}}></div>
+        <h1 className='font-bold font-sans text-home-link-seccond-blue'>Sonorização</h1>
+        <p className='font-sans text-home-link-seccond-blue'>Deixe seu ambiente com um som ambiente de qualidade.</p>
       </div>
     </div>
   )
