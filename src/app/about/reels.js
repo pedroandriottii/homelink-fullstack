@@ -3,6 +3,25 @@ import React, { useEffect, useState, useRef } from 'react';
 import { getDownloadURL, ref as firebaseRef } from "firebase/storage";
 import { storage } from '../../firebase';
 
+const loadingStyle = {
+  display: 'flex',
+  justifyContent: 'center',
+  alignItems: 'center',
+  width: '100%',
+  height: '100%',
+  borderRadius: '15px', // Mantém o borda arredondada consistente com o vídeo
+  backgroundColor: '#f0f0f0', // Uma cor de fundo; ajuste conforme necessário
+};
+
+const spinnerStyle = {
+  border: '4px solid #f3f3f3', // Cor da borda "leve"
+  borderTop: '4px solid #3498db', // Cor da borda superior (parte do spinner que será vista girando)
+  borderRadius: '50%',
+  width: '50px',
+  height: '50px',
+  animation: 'spin 2s linear infinite',
+};
+
 const VideoComponent = ({ videoPath, posterPath }) => {
   const [videoUrl, setVideoUrl] = useState("");
   const [posterUrl, setPosterUrl] = useState("");
@@ -46,7 +65,9 @@ const VideoComponent = ({ videoPath, posterPath }) => {
           Seu navegador não suporta vídeos.
         </video>
       ) : (
-        <p>Carregando vídeo...</p>
+        <div style={loadingStyle}>
+          <div style={spinnerStyle}></div>
+        </div>
       )}
       {!showControls && (
         <div

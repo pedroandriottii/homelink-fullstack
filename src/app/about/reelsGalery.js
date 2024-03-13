@@ -1,4 +1,5 @@
-import React from 'react';
+"use client";
+import React, { useState } from 'react';
 import VideoComponent from './reels';
 
 const videosInfo = [
@@ -10,11 +11,22 @@ const videosInfo = [
 ];
 
 const VideosGallery = () => {
+  const [visibleVideos, setVisibleVideos] = useState(3); // Inicializa com os primeiros 3 vídeos visíveis
+
+  const loadMoreVideos = () => {
+    setVisibleVideos((prevVisibleVideos) => prevVisibleVideos + 3); // Carrega mais 3 vídeos
+  };
+
   return (
-    <div>
-      {videosInfo.map((videoInfo, index) => (
+    <div className='flex flex-col items-center'>
+      {videosInfo.slice(0, visibleVideos).map((videoInfo, index) => (
         <VideoComponent key={index} videoPath={videoInfo.videoPath} posterPath={videoInfo.posterPath} />
       ))}
+      {visibleVideos < videosInfo.length && (
+        <button onClick={loadMoreVideos} className='items-center border border-solid rounded-md max-w-40 border-home-link-background-blue p-2 font-bold font-sans uppercase bg-[#ebebeb8c]'>
+          Mostrar Mais
+        </button>
+      )}
     </div>
   );
 };
