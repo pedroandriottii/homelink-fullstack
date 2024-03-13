@@ -23,7 +23,7 @@ const VideosGallery = () => {
         <VideoComponent key={index} videoPath={videoInfo.videoPath} posterPath={videoInfo.posterPath} />
       ))}
       {visibleVideos < videosInfo.length && (
-        <button onClick={loadMoreVideos} className='items-center border border-solid rounded-md max-w-40 border-home-link-background-blue p-2 font-bold font-sans uppercase bg-[#ebebeb8c]'>
+        <button onClick={loadMoreVideos} className='items-center border border-solid rounded-md max-w-40 border-home-link-background-blue p-2 mb-6 font-bold font-sans uppercase bg-[#ebebeb8c]'>
           Mostrar Mais
         </button>
       )}

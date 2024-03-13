@@ -1,23 +1,25 @@
-import type { Metadata } from "next";
+import { ReactNode } from 'react';
+import Head from 'next/head';
 import { Montserrat } from "next/font/google";
-
 import "./globals.css";
 
 const montserrat = Montserrat({ subsets: ["latin"], weight: ['400', '700'], display: "swap" });
 
-export const metadata: Metadata = {
-  title: "Home Link",
-  description: "Automação Residencial & Corporativa",
-};
-
 export default function RootLayout({
   children,
-}: Readonly<{
-  children: React.ReactNode;
-}>) {
+}: {
+  children: ReactNode;
+}) {
   return (
-    <html lang="pt-br">
-      <body className={montserrat.className}>{children}</body>
-    </html>
+    <>
+      <Head>
+        <title>Home Link</title>
+        <meta name="description" content="Automação Residencial & Corporativa" />
+        <link rel="icon" href="/favicon/favicon.ico" />
+      </Head>
+      <html lang="pt-br">
+        <body className={montserrat.className}>{children}</body>
+      </html>
+    </>
   );
 }

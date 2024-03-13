@@ -12,7 +12,6 @@ export default function About() {
       <AboutBody />
       <div className="flex flex-col items-center">
         <VideosGallery />
-        <p className="text-home-link-background-blue mb-5">Mais projetos em nossas Redes Sociais!</p>
       </div>
       <Footer />
     </div>
