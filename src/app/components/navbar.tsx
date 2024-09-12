@@ -63,7 +63,7 @@ export default function Navbar() {
           </div>
           <a href="" className=' text-white font-bold font-sans inline-block border border-solid rounded-xl border-home-link-background-blue p-2 bg-home-link-seccond-blue hover:bg-home-link-light-blue hover:text-home-link-background-blue'>Solicitar Orçamento</a>
         </div>
-      </header>
+      </header >
     </>
   );
 }
