@@ -1,5 +1,6 @@
 "use client";
 import Image from 'next/image';
+import Link from 'next/link';
 import { useState } from 'react';
 
 export default function Navbar() {
@@ -13,33 +14,6 @@ export default function Navbar() {
 
   return (
     <>
-      <style jsx>{`
-        .link {
-          position: relative;
-          color: white;
-          text-decoration: none;
-          padding-bottom: 5px; /* Adjust space for underline */
-        }
-
-        .link::after {
-          content: '';
-          position: absolute;
-          left: 0;
-          bottom: 0; /* Adjust to control distance from text */
-          height: 2px; /* Height of underline */
-          width: 100%;
-          background-color: white;
-          transform: scaleX(0);
-          transform-origin: bottom right;
-          transition: transform 0.3s ease-out;
-        }
-
-        .link:hover::after,
-        .link:focus::after {
-          transform: scaleX(1);
-          transform-origin: bottom left;
-        }
-      `}</style>
       <header className="bg-home-link-background-blue">
         <div className="lg:hidden flex items-center justify-between pt-10 pl-6 pb-6 pr-6 w-full box-border">
           <button className="relative p-4 focus:outline-none" onClick={toggleMenu}>
@@ -63,10 +37,11 @@ export default function Navbar() {
         {/* Navbar mobile */}
         <div
           style={{ maxHeight: maxHeight }} className={`transition-max-height duration-700 ease-in-out overflow-hidden lg:hidden`}>
-          <div className="bg-home-link-background-blue w-full p-6">
-            <a href="/" className="link block py-2 border border-solid rounded-xl mb-3 pl-4 uppercase text-xl">Home</a>
-            <a href="/about" className="link block py-2 border border-solid rounded-xl mb-3 pl-4 uppercase text-xl">Portfólio</a>
-            <a href="/services" className="link block py-2 border border-solid rounded-xl mb-3 pl-4 uppercase text-xl">Nossos Serviços</a>
+          <div className="bg-home-link-background-blue w-full p-6 text-white">
+            <Link href="/" className="block py-2 border border-solid rounded-xl mb-3 pl-4 uppercase text-xl">Home</Link>
+            <Link href="/about" className="block py-2 border border-solid rounded-xl mb-3 pl-4 uppercase text-xl">Portfólio</Link>
+            <Link href="/services" className="block py-2 border border-solid rounded-xl mb-3 pl-4 uppercase text-xl">Nossos Serviços</Link>
+            <Link href="/auth/login" className="block py-2 border border-solid rounded-xl mb-3 pl-4 uppercase text-xl">Login</Link>
           </div>
         </div>
 
@@ -81,10 +56,11 @@ export default function Navbar() {
             />
           </a>
           <div className='flex gap-12'>
-            <a href="/" className="link">Home</a>
-            <a href="/about" className="link">Portfólio</a>
-            <a href="/services" className="link">Nossos Serviços</a>
-          </div> 
+            <Link href="/" className="relative text-white no-underline pb-1 after:content-[''] after:absolute after:left-0 after:bottom-0 after:h-[2px] after:w-full after:bg-white after:scale-x-0 after:origin-bottom-right after:transition-transform after:duration-300 hover:after:scale-x-100 hover:after:origin-bottom-left">Home</Link>
+            <Link href="/about" className="relative text-white no-underline pb-1 after:content-[''] after:absolute after:left-0 after:bottom-0 after:h-[2px] after:w-full after:bg-white after:scale-x-0 after:origin-bottom-right after:transition-transform after:duration-300 hover:after:scale-x-100 hover:after:origin-bottom-left">Portfólio</Link>
+            <Link href="/services" className="relative text-white no-underline pb-1 after:content-[''] after:absolute after:left-0 after:bottom-0 after:h-[2px] after:w-full after:bg-white after:scale-x-0 after:origin-bottom-right after:transition-transform after:duration-300 hover:after:scale-x-100 hover:after:origin-bottom-left">Nossos Serviços</Link>
+            <Link href="/auth/login" className="relative text-white no-underline pb-1 after:content-[''] after:absolute after:left-0 after:bottom-0 after:h-[2px] after:w-full after:bg-white after:scale-x-0 after:origin-bottom-right after:transition-transform after:duration-300 hover:after:scale-x-100 hover:after:origin-bottom-left">Login</Link>
+          </div>
           <a href="" className=' text-white font-bold font-sans inline-block border border-solid rounded-xl border-home-link-background-blue p-2 bg-home-link-seccond-blue hover:bg-home-link-light-blue hover:text-home-link-background-blue'>Solicitar Orçamento</a>
         </div>
       </header>
